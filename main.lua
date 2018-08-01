@@ -19,6 +19,8 @@ function love.draw()
 	-- Scale everything inbetween start() and finish()
 	-- to the target resolution
 	maid64.start()
+		game:emit("draw")
+
 		-- Draw a circle at the mouse's position relative to scaling
 		love.graphics.circle("fill", maid64.mouse.getX(), maid64.mouse.getY(), 2)
 	maid64.finish()
