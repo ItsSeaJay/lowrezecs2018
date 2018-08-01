@@ -1,7 +1,7 @@
 local concord = require "lib.concord"
 local maid64 = require "lib.maid64"
-player = require "src.entities.player"
-Position = require "src.components.position"
+local player = require "src.entities.player"
+local Position = require "src.components.position"
 
 function love.load()
 	-- Initialise concord
@@ -27,6 +27,12 @@ function love.draw()
 		-- Draw a circle at the mouse's position relative to scaling
 		love.graphics.circle("fill", maid64.mouse.getX(), maid64.mouse.getY(), 2)
 	maid64.finish()
+end
+
+function love.keypressed(key, scancode, isRepeat)
+	if key == "escape" and not isRepeat then
+		love.event.quit()
+	end
 end
 
 function love.resize(width, height)
