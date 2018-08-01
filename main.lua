@@ -1,6 +1,7 @@
 local concord = require "lib.concord"
 local maid64 = require "lib.maid64"
-local player = require "src.entities.player"
+local Player = require "src.entities.player"
+local Position = require "src.components.position"
 
 function love.load()
 	-- Initialise concord
@@ -9,11 +10,13 @@ function love.load()
 	-- Configure Maid64 to run at 64 pixels squared
 	maid64.setup(64)
 
-	alien = maid64.newImage("res/placeholders/alien.png")
+	alien = Player()
 end
 
 function love.update(deltaTime)
-
+	local position = alien:get(Position)
+	
+	position:move(1 * deltaTime, 1 * deltaTime)
 end
 
 function love.draw()
