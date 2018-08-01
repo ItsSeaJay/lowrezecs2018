@@ -1,9 +1,9 @@
-Component = require "lib.concord.component"
-Position = require "src.components.position"
-Sprite = require "src.components.sprite"
-System = require "lib.concord.system"
+local Component = require "lib.concord.component"
+local Position = require "src.components.Position"
+local Sprite = require "src.components.Sprite"
+local System = require "lib.concord.system"
 -- Create a system filtered by entities that have both a sprite and position
-DrawSystem = System({
+local DrawSystem = System({
 	Position,
 	Sprite
 })
