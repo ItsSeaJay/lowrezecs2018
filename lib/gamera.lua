@@ -89,6 +89,22 @@ function gamera.new(l,t,w,h)
   return cam
 end
 
+function gamera:attach()
+  local scale = self.scale
+  
+  love.graphics.setScissor(self:getWindow())
+  love.graphics.push()
+	  love.graphics.scale(scale)
+	  love.graphics.translate((self.w2 + self.l) / scale, (self.h2+self.t) / scale)
+	  love.graphics.rotate(-self.angle)
+	  love.graphics.translate(-self.x, -self.y)
+end
+
+function gamera:detach()
+  love.graphics.pop()
+  love.graphics.setScissor()
+end
+
 function gamera:setWorld(l,t,w,h)
   checkAABB(l,t,w,h)
 
