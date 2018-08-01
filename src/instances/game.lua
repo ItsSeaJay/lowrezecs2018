@@ -6,8 +6,11 @@ local InputSystem = require "src.systems.Input"
 local CameraSystem = require "src.systems.Camera"
 local PlayerEntity = require "src.entities.Player"
 local CameraEntity = require "src.entities.Camera"
-local cameraSystem = CameraSystem(CameraEntity)
+local cameraSystem = CameraSystem()
+local camera = CameraEntity()
 local GameInstance = Instance()
+
+cameraSystem:init(camera)
 
 -- Add all the entities to the instance
 GameInstance:addEntity(PlayerEntity)
