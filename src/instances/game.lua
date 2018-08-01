@@ -10,7 +10,7 @@ GameInstance:addEntity(PlayerEntity)
 
 -- Add all the systems and activate them
 GameInstance:addSystem(UpdateSystem(), "update")
+GameInstance:addSystem(InputSystem(), "update")
 GameInstance:addSystem(DrawSystem(), "draw")
-GameInstance:addSystem(InputSystem(), "input")
 
 return GameInstance

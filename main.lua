@@ -13,7 +13,6 @@ end
 
 function love.update(deltaTime)
 	game:emit("update", deltaTime)
-	game:emit("input", deltaTime)
 end
 
 function love.draw()
