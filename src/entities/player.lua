@@ -1,7 +1,7 @@
 local Entity = require "lib.concord.entity"
-local Position = require "src.components.position"
-local Sprite = require "src.components.sprite"
-local MovementController = require "src.components.movementcontroller"
+local Position = require "src.components.Position"
+local Sprite = require "src.components.Sprite"
+local MovementController = require "src.components.MovementController"
 local PlayerEntity = Entity()
 
 -- A player has the following components:
