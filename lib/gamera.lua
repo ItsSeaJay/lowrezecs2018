@@ -24,7 +24,7 @@ local function checkNumber(value, name)
 end
 
 local function checkPositiveNumber(value, name)
-  if type(value) ~= 'number' or value <=0 then
+  if type(value) ~= 'number' or value <= 0 then
     error(name .. " must be a positive number (was: " .. tostring(value) ..")")
   end
 end

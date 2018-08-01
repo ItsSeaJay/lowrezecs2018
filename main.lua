@@ -2,7 +2,7 @@ local concord = require "lib.concord"
 local maid64 = require "lib.maid64"
 local game = require "src.instances.game"
 
-function love.load()
+function love.load()	
 	concord.init()
 	maid64.setup(64)
 end
@@ -12,14 +12,9 @@ function love.update(deltaTime)
 end
 
 function love.draw()
-	local cameraCallback = function(l, t, w, h) end
-
 	-- Scale everything inbetween start() and finish()
 	-- to the target resolution
-	maid64.start()
-		-- Draw everything on the screen
-		game:emit("draw", cameraCallback)
-	maid64.finish()
+	game:emit("draw")
 end
 
 function love.keypressed(key, scancode, isRepeat)
