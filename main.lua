@@ -1,4 +1,4 @@
-local maid64 = require "maid64"
+local maid64 = require "lib.maid64"
 
 function love.load()
 	-- Configure Maid64 to run at 64 pixels squared
