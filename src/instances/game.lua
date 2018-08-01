@@ -5,6 +5,8 @@ local DrawSystem = require "src.systems.Draw"
 local InputSystem = require "src.systems.Input"
 local CameraSystem = require "src.systems.Camera"
 local PlayerEntity = require "src.entities.Player"
+local CameraEntity = require "src.entities.Camera"
+local cameraSystem = CameraSystem(CameraEntity)
 local GameInstance = Instance()
 
 -- Add all the entities to the instance
@@ -14,8 +16,8 @@ GameInstance:addEntity(PlayerEntity)
 -- events occur in the order they are added to the instance
 GameInstance:addSystem(UpdateSystem(), "update")
 GameInstance:addSystem(InputSystem(), "update")
-GameInstance:addSystem(CameraSystem, "draw", "push")
+GameInstance:addSystem(cameraSystem, "draw", "push")
 GameInstance:addSystem(DrawSystem(), "draw")
-GameInstance:addSystem(CameraSystem, "draw", "pop")
+GameInstance:addSystem(cameraSystem, "draw", "pop")
 
 return GameInstance

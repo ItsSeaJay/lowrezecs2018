@@ -1,13 +1,13 @@
 Component = require "lib.concord.component"
-Camera = require "src.components.camera"
 System = require "lib.concord.system"
+Camera = require "src.components.Camera"
 CameraSystem = System({
 	Camera
 })
 
-function CameraSystem:set(camera)
+function CameraSystem:init(entity)
 	-- Ensure that only one camera view is shown at once
-	self.activeCamera = camera
+	self.activeCamera = entity
 end
 
 function CameraSystem:push()
