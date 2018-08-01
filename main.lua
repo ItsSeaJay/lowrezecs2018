@@ -1,5 +1,6 @@
 local concord = require "lib.concord"
 local maid64 = require "lib.maid64"
+local player = require "src.entities.player"
 
 function love.load()
 	-- Initialise concord
