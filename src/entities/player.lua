@@ -7,6 +7,6 @@ local PlayerEntity = Entity()
 -- A player has the following components:
 PlayerEntity:give(Position, 0, 0) -- Start in the top-left
 PlayerEntity:give(Sprite, "res/placeholders/alien.png")
-PlayerEntity:give(MovementController, 4)
+PlayerEntity:give(MovementController, 16)
 
 return PlayerEntity
