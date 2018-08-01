@@ -1,7 +1,9 @@
 local Entity = require "lib.concord.entity"
 local Position = require "src.components.position"
-local Player = Entity()
+local Sprite = require "src.components.sprite"
+local player = Entity()
 
-Player:give(Position, 0, 0)
+player:give(Position, 0, 0)
+player:give(Sprite, "res/placeholders/alien.png")
 
-return Player
+return player

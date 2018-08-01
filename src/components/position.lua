@@ -4,6 +4,11 @@ local Position = Component(function (entity, x, y)
 	entity.y = y
 end)
 
+function Position:set(x, y)
+	self.x = self.x + x
+	self.y = self.y + y
+end
+
 function Position:move(deltaX, deltaY)
 	self.x = self.x + deltaX
 	self.y = self.y + deltaY
