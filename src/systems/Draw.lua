@@ -9,7 +9,7 @@ DrawSystem = System({
 })
 
 function DrawSystem:draw()
-	-- Draw entities with a sprite component
+	-- Draw entities with a sprite component at their current position
 	for _, entity in ipairs(self.pool.objects) do
 		local position = entity:get(Position)
 		local sprite = entity:get(Sprite)

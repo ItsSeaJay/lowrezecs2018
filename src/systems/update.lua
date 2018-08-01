@@ -11,8 +11,6 @@ function UpdateSystem:update(deltaTime)
 
 		position.x = position.x + 1 * deltaTime
 		position.y = position.y + 1 * deltaTime
-
-		print(position.x, position.y)
 	end
 end
 
