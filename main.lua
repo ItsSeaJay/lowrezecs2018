@@ -4,6 +4,7 @@ local game = require "src.instances.game"
 
 function love.load()
 	-- Initialise the game's libraries and systems
+	-- NOTE: Concord may have issues if it's not initialised immediately
 	concord.init()
 
 	-- Configure maid64 to run at 64 pixels squared

@@ -1,11 +1,11 @@
 local Component = require "lib.concord.component"
 local Position = require "src.components.position"
 local System = require "lib.concord.system"
-local Update = System({
+local UpdateSystem = System({
 	Position
 })
 
-function Update:update(deltaTime)
+function UpdateSystem:update(deltaTime)
 	for _, entity in ipairs(self.pool.objects) do
 		local position = entity:get(Position)
 
@@ -16,4 +16,4 @@ function Update:update(deltaTime)
 	end
 end
 
-return Update
+return UpdateSystem

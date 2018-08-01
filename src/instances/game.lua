@@ -1,9 +1,11 @@
 local Instance = require "lib.concord.instance"
 local UpdateSystem = require "src.systems.update"
-local player = require "src.entities.player"
-local game = Instance()
+local DrawSystem = require "src.systems.draw"
+local PlayerEntity = require "src.entities.player"
+local GameInstance = Instance()
 
-game:addEntity(player)
-game:addSystem(UpdateSystem(), "update")
+GameInstance:addEntity(PlayerEntity)
+GameInstance:addSystem(UpdateSystem(), "update")
+GameInstance:addSystem(DrawSystem(), "draw")
 
-return game
+return GameInstance
