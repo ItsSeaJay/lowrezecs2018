@@ -4,6 +4,6 @@ local player = require "src.entities.player"
 local game = Instance()
 
 game:addEntity(player)
-game:addSystem(UpdateSystem())
+game:addSystem(UpdateSystem(), "update")
 
 return game
