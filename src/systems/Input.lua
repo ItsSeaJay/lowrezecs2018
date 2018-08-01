@@ -16,6 +16,20 @@ function InputSystem:update(deltaTime)
 	for _, entity in ipairs(self.pool.objects) do
 		local controller = entity:get(MovementController)
 		local position = entity:get(Position)
+
+		-- Horizontal
+		if up then
+			position.y = position.y - controller.speed * deltaTime
+		elseif down then
+			position.y = position.y + controller.speed * deltaTime
+		end
+
+		-- Vertical
+		if left then
+			position.x = position.x - controller.speed * deltaTime
+		elseif right then
+			position.x = position.x + controller.speed * deltaTime
+		end
 	end
 end
 
