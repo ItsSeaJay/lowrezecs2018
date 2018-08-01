@@ -7,11 +7,11 @@ local InputSystem = System({
 	Position
 })
 
-function InputSystem:update(deltaTime)
-	local up = love.keyboard.isdown("w")
-	local down = love.keyboard.isdown("s")
-	local left = love.keyboard.isdown("a")
-	local right = love.keyboard.isdown("d")
+function InputSystem:handle(deltaTime)
+	local up = love.keyboard.isDown("w")
+	local down = love.keyboard.isDown("s")
+	local left = love.keyboard.isDown("a")
+	local right = love.keyboard.isDown("d")
 
 	for _, entity in ipairs(self.pool.objects) do
 		local controller = entity:get(MovementController)
