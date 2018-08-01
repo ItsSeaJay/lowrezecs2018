@@ -89,7 +89,7 @@ function gamera.new(l,t,w,h)
   return cam
 end
 
-function gamera:attach()
+function gamera:push()
   local scale = self.scale
   
   love.graphics.setScissor(self:getWindow())
@@ -100,7 +100,7 @@ function gamera:attach()
 	  love.graphics.translate(-self.x, -self.y)
 end
 
-function gamera:detach()
+function gamera:pop()
   love.graphics.pop()
   love.graphics.setScissor()
 end
