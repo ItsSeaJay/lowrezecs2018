@@ -3,14 +3,15 @@ local maid64 = require "lib.maid64"
 local game = require "src.instances.game"
 
 function love.load()
-	-- Initialise concord
+	-- Initialise the game's libraries and systems
 	concord.init()
 
-	-- Configure Maid64 to run at 64 pixels squared
+	-- Configure maid64 to run at 64 pixels squared
 	maid64.setup(64)
 end
 
 function love.update(deltaTime)
+	game:emit("update", deltaTime)
 end
 
 function love.draw()
@@ -30,6 +31,7 @@ function love.keypressed(key, scancode, isRepeat)
 end
 
 function love.resize(width, height)
-	-- Alert Maid64 that the dimensions of the canvas changed
+	-- Alert maid64 that the dimensions of the canvas changed
+	-- This will cause it to fill the window
 	maid64.resize(width, height)
 end
